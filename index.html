@@ -4,26 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <div class="container">
-        <div class="current-info">
+    <div class="container-fluid mx-auto">
+        <header>
+            <h1 class="text-center p-2">Weather Dashboard</h1>
+        </header>
+        
+    
+        <div class="main-content d-flex m-3 justify-content-center">
 
-            <div class="date-container">
-                <div class="time" id="time">
-                    12:30 <span id="am-pm">PM</span>
+            <div class="col col-sm-12 col-md-8 col-lg-3 search-history d-flex flex-column">
+                <h2 class="py-3">Search for a City</h2>
+                <input id="searchCity" class="py-2" type="text" placeholder="Orlando" />
+                <div class="buttons d-flex justify-content-between">   
+                    <button id="searchCityButton" class="btn btn-primary btnSearch my-4">Search</button>
+                    <button id="clearCityHistory" class="btn btn-primary btnClear my-4">Clear History</button>
                 </div>
-                <div class="date" id="date">
-                    Sunday, May 29
-                </div>
-                <div class="others" id="current-weather-items">
+            
+                <form id="history-button-form">
+                    <div id="searchHistory" class="history">
 
-                </div>
+                    </div>
+                </form>
             </div>
+
+            <div class="weather-info m-1 p-1">
+
+                <div id="today" class="today p-2">
+                    <p id="temp"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                    <p id="uvi" class="uvi"></p>
+                    <p id="conditions"></p>
+                </div>
+
+                <h3>5-Day Forecast</h3>
+                <div class="five-day-container d-flex flex-wrap">
+                    
+                    <div id="dayOne" class="five-day m-2">
+                        
+                    </div>
+
+                    <div id="dayTwo" class="five-day m-2">
+                        
+                    </div>
+
+                    <div id="dayThree" class="five-day m-2">
+                        
+                    </div>
+
+                    <div id="dayFour" class="five-day m-2">
+                        
+                    </div>
+
+                    <div id="dayFive" class="five-day m-2">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+    
     </div>
     
+    <script src="./assets/script.js"></script>
 </body>
 </html>
